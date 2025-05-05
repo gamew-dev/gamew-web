@@ -1,355 +1,634 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-  <title>Gamе́w</title>
-  <meta content="Server yang bermaskot Bapenk ini adalah server discord yang dimana kita bisa melakukan banyak hal(?) awiwok ancrit" name="description">
-  <meta content="gamew" name="keywords">
-    <meta property="og:description" content="Server yang bermaskot Bapenk ini adalah server discord yang dimana kita bisa melakukan banyak hal(?) awiwok ancrit">
-    <meta property="og:type" content="website">
-   <meta property="og:theme-color" content="GREEN">
-    <meta property="og:title" content="Gamе́w">
-    <meta property="og:site_name" content="Gamе́w">
-    <meta property="og:image" content="https://cdn.discordapp.com/icons/875388139148017715/b2e81bedcc829ff85c598ac3e29b01e5.webp">
-    <meta property="og:url" content="https://gamew.faris0520.repl.co">
-
-  <!-- Favicons -->
-  <link href="https://cdn.discordapp.com/icons/875388139148017715/b2e81bedcc829ff85c598ac3e29b01e5.webp" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
-  <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gamew 2.0</title>
+    <meta property="og:title" content="Gamе́w 2.0" />
+    <meta property="og:description" content="Server yang bermaskot Bapenk ini adalah server discord yang dimana kita bisa melakukan banyak hal, awikwok ancrit" />
+    <meta property="og:image" content="/assets/logo.jpg" />
+    <meta property="og:url" content="https://gamew.web.id" />
+    <meta property="og:type" content="website" />
+    <link rel="icon" href="/assets/logo.jpg">
+    <meta property="og:site_name" content="Gamе́w 2.0" />
+    <meta property="og:locale" content="en_US" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        
+        :root {
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --dark: #0f172a;
+            --darker: #020617;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--darker);
+            color: #e2e8f0;
+            overflow-x: hidden;
+        }
+        
+        .glass-card {
+            background: rgba(15, 23, 42, 0.5);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(90deg, #6366f1, #8b5cf6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.15) 0%, rgba(15, 23, 42, 0.5) 100%);
+        }
+        
+        .discord-btn {
+            background-color: #5865F2;
+            transition: all 0.3s ease;
+        }
+        
+        .discord-btn:hover {
+            background-color: #4752C4;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(88, 101, 242, 0.3);
+        }
+        
+        .member-card {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        .member-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .community-icon {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .feature-card {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        .feature-card:hover {
+            background: rgba(15, 23, 42, 0.7);
+            transform: scale(1.05);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--primary);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .animate-fadeIn {
+            animation: fadeIn 0.8s ease forwards;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .grid-pattern {
+            background-image: 
+                linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+        
+        .blob {
+            position: absolute;
+            filter: blur(60px);
+            opacity: 0.15;
+            z-index: -1;
+            border-radius: 50%;
+        }
+        
+        .blob-1 {
+            width: 600px;
+            height: 600px;
+            background: linear-gradient(180deg, #6366f1 0%, #8b5cf6 100%);
+            top: -300px;
+            right: -300px;
+        }
+        
+        .blob-2 {
+            width: 500px;
+            height: 500px;
+            background: linear-gradient(180deg, #10b981 0%, #3b82f6 100%);
+            bottom: -200px;
+            left: -200px;
+        }
+    </style>
 </head>
-
-<body>
-
-  <!-- ======= Mobile nav toggle button ======= -->
-  <!-- <button type="button" class="mobile-nav-toggle d-xl-none"><i class="bi bi-list mobile-nav-toggle"></i></button> -->
-  <i class="bi bi-list mobile-nav-toggle d-lg-none"></i>
-  <!-- ======= Header ======= -->
-  <header id="header" class="d-flex flex-column justify-content-center">
-
-    <nav id="navbar" class="navbar nav-menu">
-      <ul>
-        <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
-        <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
-        <li><a href="#facts" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Facts</span></a></li>
-        <li><a href="#testimonials" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Quotes</span></a></li>
-        <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
-      </ul>
-    </nav><!-- .nav-menu -->
-
-  </header><!-- End Header -->
-
-  <!-- ======= Hero Section ======= -->
-  <section id="hero" class="d-flex flex-column justify-content-center">
-    <div class="container" data-aos="zoom-in" data-aos-delay="100">
-      <h1>Gamе́w</h1>
-      <p>Disini kita <span class="typed" data-typed-items="mabaw, ngobrol, sfi, berteman."></span></p>
-      <div class="social-links">
-        <a href="https://reddit.com/r/gamew" class="reddit"><i class="bx bxl-reddit"></i></a>
-        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-        <a href="https://discord.com/invite/PmcWWpGTR6" class="discord"><i class="bx bxl-discord"></i></a>
-      </div>
-    </div>
-  </section><!-- End Hero -->
-
-  <main id="main">
-
-    <!-- ======= About Section ======= -->
-    <section id="about" class="about">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-title">
-          <h2>About</h2>
-          <p>Gamе́w (atau Gamе́w 2.0) adalah server Discord dimana kita bisa_________gtw. bisa turu</p>
-        </div>
-
-        <div class="row">
-          <div class="col-lg-4">
-            <img src="https://cdn.discordapp.com/icons/875388139148017715/b2e81bedcc829ff85c598ac3e29b01e5.webp?size=4096" class="img-fluid" alt="">
-          </div>
-          <div class="col-lg-8 pt-4 pt-lg-0 content">
-            <h3>Bapenk</h3>
-            <p class="fst-italic">
-              Bapenk adalah maskot Gamе́w 2.0 saat ini, yang menggantikan Mike wazowski di Gamе́w. Diciptakan/ditentukan oleh Zake#9222.
-            </p>
-            <div class="row">
-              <div class="col-lg-6">
-                <ul>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Dibuat:</strong> <span>12 Agustus 2021</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Website:</strong> <span>https://gamew.is-a.dev</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Founder:</strong> <span>Hissats</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Owner (saat ini):</strong> <span>Zake</span></li>
-                </ul>
-              </div>
-                </ul>
-              </div>
-            </div>
-            <p>
-              Officiis eligendi itaque labore et dolorum mollitia officiis optio vero. Quisquam sunt adipisci omnis et ut. Nulla accusantium dolor incidunt officia tempore. Et eius omnis.
-            </p>
-          </div>
-      </div>
-        </div>
-      <div style="position: relative; overflow: hidden; padding-top: 56.25%;"><iframe src="https://share.synthesia.io/embeds/videos/f6362d9e-a4a5-4116-8de5-e5b81a1ff476" loading="lazy" allow="encrypted-media; fullscreen;" style="position: absolute; width: 70%; height: 70%; top: 0; left: 0; border: none; padding: 0; margin: 0; overflow:hidden;"></iframe></div>
-    </section><!-- End About Section -->
-
-    <!-- ======= Facts Section ======= -->
-    <section id="facts" class="facts">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-title">
-          <h2>Facts</h2>
-          <p>Gamе́w telah mempunyai banyak pencapaian seperti:</p>
-        </div>
-
-        <div class="row">
-
-          <div class="col-lg-3 col-md-6">
-            <div class="count-box">
-              <i class="bi bi-emoji-smile"></i>
-              <span data-purecounter-start="0" data-purecounter-end="106" data-purecounter-duration="1" class="purecounter"></span>
-              <p>Member</p>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 mt-5 mt-md-0">
-            <div class="count-box">
-              <i class="bi bi-journal-richtext"></i>
-              <span data-purecounter-start="0" data-purecounter-end="27" data-purecounter-duration="1" class="purecounter"></span>
-              <p>Member Online</p>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
-            <div class="count-box">
-              <i class="bi bi-headset"></i>
-              <span data-purecounter-start="0" data-purecounter-end="9" data-purecounter-duration="1" class="purecounter"></span>
-              <p>Member Aktif</p>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
-            <div class="count-box">
-              <i class="bi bi-award"></i>
-              <span data-purecounter-start="0" data-purecounter-end="52" data-purecounter-duration="1" class="purecounter"></span>
-              <p>Pesan setiap hari</p>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section><!-- End Facts Section -->
-
-
-    <!-- ======= Testimonials Section ======= -->
-    <section id="testimonials" class="testimonials section-bg">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-title">
-          <h2>Quotes</h2>
-        </div>
-
-        <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
-          <div class="swiper-wrapper">
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="https://avatars.githubusercontent.com/u/65797160?v=4" class="testimonial-img" alt="">
-                <h3>parr1s</h3>
-                <h4>Admin Leader</h4>
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  sfi :nosad: :mengsad:
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="https://media.discordapp.net/attachments/820450542874656798/1051744897096499261/Hyzyd.webp" class="testimonial-img" alt="">
-                <h3>Hyzyd</h3>
-                <h4>_</h4>
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Sang mata telah tiada, benar kata dia. 500 tahun setelahnya hanyalah gunung gunung yang saling bergejolak.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="https://cdn.discordapp.com/attachments/877040824163123240/1052180418163654676/ce21d4b31a657afa3729926936219823.png" class="testimonial-img" alt="">
-                <h3>Zake</h3>
-                <h4>Owner</h4>
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Oi member gamew lama kenalan sama member gamew baru oi.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="https://cdn.discordapp.com/avatars/615160869743099914/b9e056f13c74290c50fce20cade67500.png" class="testimonial-img" alt="">
-                <h3>Insert Name Here</h3>
-                <h4>OG Admin</h4>
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  mtk minat tp g minat 😅👆 
-                  <a href="https://discord.com/channels/875388139148017715/875388139932356610/982271408497369148">      [Link pesan]</a>
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
-                <h3>John Larson</h3>
-                <h4>Entrepreneur</h4>
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-              </div>
-            </div><!-- End testimonial item -->
-
-          </div>
-          <div class="swiper-pagination"></div>
-        </div>
-
-      </div>
-    </section><!-- End Testimonials Section -->
-
-    <!-- ======= Contact Section ======= -->
-    <section id="contact" class="contact">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-title">
-          <h2>Contact</h2>
-        </div>
-
-        <div class="row mt-1">
-
-          <div class="col-lg-4">
-            <div class="info">
-              <div class="address">
-                <i class="bi bi-geo-alt"></i>
-                <h4>Location:</h4>
-                <p>Yogyakarta, DIY Yogyakarta, Indonesia</p>
-              </div>
-
-              <div class="email">
-                <i class="bi bi-envelope"></i>
-                <h4>Email:</h4>
-                <p>gamew@secret.fyi</p>
-              </div>
-
-              <div class="phone">
-                <i class="bi bi-phone"></i>
-                <h4>Call:</h4>
-                <p>+62869696969</p>
-              </div>
-
-            </div>
-
-          </div>
-
-          <div class="col-lg-8 mt-5 mt-lg-0">
-
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
-              <div class="row">
-                <div class="col-md-6 form-group">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+<body class="grid-pattern">
+    <!-- Blob background elements -->
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    
+    <!-- Navigation -->
+    <nav class="glass-card fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <img class="h-9 w-9 rounded-full mr-3" src="/assets/logo.jpg" alt="Gamew 2.0 Logo">
+                        <span class="text-white font-bold text-xl">Gamew <span class="gradient-text">2.0</span></span>
+                    </div>
+                    <div class="hidden md:block">
+                        <div class="ml-10 flex items-center space-x-8">
+                            <a href="#home" class="nav-link text-gray-300 hover:text-white px-3 py-2 text-sm font-medium">Home</a>
+                            <a href="#about" class="nav-link text-gray-300 hover:text-white px-3 py-2 text-sm font-medium">About</a>
+                            <a href="#team" class="nav-link text-gray-300 hover:text-white px-3 py-2 text-sm font-medium">Team</a>
+                            <a href="#features" class="nav-link text-gray-300 hover:text-white px-3 py-2 text-sm font-medium">Features</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-6 form-group mt-3 mt-md-0">
-                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                <div>
+                    <a href="https://discord.gg/PmcWWpGTR6" target="_blank" class="discord-btn text-white px-5 py-2.5 rounded-lg text-sm font-medium flex items-center shadow-lg">
+                        <i class="fab fa-discord mr-2"></i> Join Discord
+                    </a>
                 </div>
-              </div>
-              <div class="form-group mt-3">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
-              </div>
-              <div class="form-group mt-3">
-                <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
-              </div>
-              <div class="my-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
-              </div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
-            </form>
-
-          </div>
-
+            </div>
         </div>
+    </nav>
 
-      </div>
-    </section><!-- End Contact Section -->
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center pt-16 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+                        Ayo Join Komunitas <span class="gradient-text">Gamew 2.0</span>
+                    </h1>
+                    <p class="text-xl text-gray-300 mb-8 max-w-lg">
+                        Komunitas tempat kita bisa saling terhubung, bermain bersama, mendapat teman baru, dan bikin pengalaman seru bareng-bareng.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://discord.gg/PmcWWpGTR6" target="_blank" class="discord-btn text-white px-6 py-3.5 rounded-lg font-medium flex items-center shadow-lg">
+                            <i class="fab fa-discord mr-2"></i> Join Now
+                        </a>
+                        <a href="#about" class="glass-card text-white px-6 py-3.5 rounded-lg font-medium hover:bg-slate-800/50 transition flex items-center">
+                            <i class="fas fa-chevron-down mr-2"></i> Explore
+                        </a>
+                    </div>
+                    <div class="mt-12 flex items-center space-x-6">
+                        <div class="flex -space-x-2">
+                            <img class="w-10 h-10 rounded-full border-2 border-slate-800" src="/assets/didit.jpg" alt="">
+                            <img class="w-10 h-10 rounded-full border-2 border-slate-800" src="/assets/chiya.jpg" alt="">
+                            <img class="w-10 h-10 rounded-full border-2 border-slate-800" src="/assets/extremman.jpg" alt="">
+                        </div>
+                        <div>
+                            <p class="text-sm text-gray-400">Join <span class="font-medium text-white">110+</span> online members</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center relative">
+                    <img src="https://avatars.githubusercontent.com/u/147623382" alt="Gamew 2.0 Community" class="community-icon rounded-2xl w-64 h-64 md:w-96 md:h-96 object-cover border-4 border-indigo-500/30 shadow-2xl">
+                    <div class="absolute -bottom-5 -left-5 glass-card p-4 rounded-xl shadow-lg border border-slate-700/50">
+                        <div class="flex items-center">
+                            <div class="bg-indigo-500/10 p-2 rounded-lg mr-3">
+                                <i class="fas fa-trophy text-indigo-400"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-gray-400">Achievement</p>
+                                <p class="text-sm font-medium text-white">"Begadang ae cuk, nanggung"</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="absolute -top-5 -right-5 glass-card p-4 rounded-xl shadow-lg border border-slate-700/50">
+                        <div class="flex items-center">
+                            <div class="bg-green-500/10 p-2 rounded-lg mr-3">
+                                <i class="fas fa-users text-green-400"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-gray-400">Member Online</p>
+                                <p class="text-sm font-medium text-white">160+ Member</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  </main><!-- End #main -->
+    <!-- About Section -->
+    <section id="about" class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20">
+                <span class="text-sm font-medium py-1 px-3 rounded-full bg-indigo-500/10 text-indigo-400 mb-4 inline-block">OUR COMMUNITY</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Kenapa <span class="gradient-text">Gamew 2.0</span> ?</h2>
+                <p class="text-lg text-gray-400 max-w-3xl mx-auto">
+                    Gamе́w (atau Gamе́w 2.0) adalah server Discord dimana kita bisa ............ gtw, bisa turu.
+                    Gamе́w bukan sekadar server discord biasa. Kami adalah keluarga besar yang bersemangat membangun sesuatu yang luar biasa bersama-sama.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="glass-card p-8 rounded-2xl feature-card">
+                    <div class="bg-indigo-500/10 w-14 h-14 rounded-lg flex items-center justify-center text-indigo-400 text-2xl mb-6">
+                        <i class="fas fa-gamepad"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-3">Tempat Nongkrong Gamer</h3>
+                    <p class="text-gray-400">
+                        Mau main game santai, atau sekadar ngobrol dan mabar bareng? Di sini ada ruang buat semua, dari yang suka game kasual sampai game aneh-aneh.
+                    </p>
+                </div>
+                
+                <div class="glass-card p-8 rounded-2xl feature-card">
+                    <div class="bg-purple-500/10 w-14 h-14 rounded-lg flex items-center justify-center text-purple-400 text-2xl mb-6">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-3">Bot Keren dan Seru</h3>
+                    <p class="text-gray-400">
+                        Ada bot khusus yang bisa merespon chat kita, yang bikin nongkrong makin asik.
+                    </p>
+                </div>
+                
+                <div class="glass-card p-8 rounded-2xl feature-card">
+                    <div class="bg-pink-500/10 w-14 h-14 rounded-lg flex items-center justify-center text-pink-400 text-2xl mb-6">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-white mb-3">Giveaway</h3>
+                    <p class="text-gray-400">
+                        Sering aktif? Terkadang ada giveaway buat yang rajin nongkrong di sini!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <!-- ======= Footer ======= -->
-  <footer id="footer">
-    <div class="container">
-      <h3>Gamе́w</h3>
-      <p>Server yang akan selalu menyenangkan, saya harap.</p>
-      <div class="social-links">
-        <a href="#" class="reddit"><i class="bx bxl-reddit"></i></a>
-        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-        <a href="#" class="discord"><i class="bx bxl-discord"></i></a>
-      </div>
-      <div class="copyright">
-        &copy; Copyright <strong><span>MyResume</span></strong>. All Rights Reserved
-      </div>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you purchased the pro version. -->
-        <!-- Licensing information: [license-url] -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/free-html-bootstrap-template-my-resume/ -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> and <a href="https://parriz.repl.co/">parr1s :3</a>
-      </div>
-    </div>
-  </footer><!-- End Footer -->
+    <!-- Stats Section -->
+    <section class="py-16 gradient-bg rounded-3xl mx-3 sm:mx-6 lg:mx-8">
+        <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-8 text-center">
+                <div class="glass-card p-6 rounded-xl">
+                    <p class="text-4xl font-bold text-white mb-2">160+</p>
+                    <p class="text-gray-300 text-sm font-medium">Online Members</p>
+                </div>
+                <div class="glass-card p-6 rounded-xl">
+                    <p class="text-4xl font-bold text-white mb-2">10+</p>
+                    <p class="text-gray-300 text-sm font-medium">Active Members</p>
+                </div>
+                <div class="glass-card p-6 rounded-xl">
+                    <p class="text-4xl font-bold text-white mb-2">24/7</p>
+                    <p class="text-gray-300 text-sm font-medium">Bot Online</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <div id="preloader"></div>
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <!-- Team Section -->
+    <section id="team" class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20">
+                <span class="text-sm font-medium py-1 px-3 rounded-full bg-indigo-500/10 text-indigo-400 mb-4 inline-block">MEET THE TEAM</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Our <span class="gradient-text">Teams</span></h2>
+                <p class="text-lg text-gray-400 max-w-3xl mx-auto">
+                    Tim keren yang bikin Gamew 2.0 tetap hidup dan makin berkembang setiap harinya.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+                <!-- Leader -->
+                <div class="glass-card p-6 rounded-xl text-center member-card">
+                    <div class="w-32 h-32 mx-auto mb-4 rounded-full bg-gradient-to-br from-indigo-500 to-purple-600 p-1 shadow-lg">
+                        <img src="/assets/pmimir.jpg" alt="Pmimir" class="w-full h-full rounded-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-semibold text-white">Pmimir</h3>
+                    <p class="text-indigo-400 font-medium mb-2 text-sm">Server Owner</p>
+                    <p class="text-gray-400 text-xs">
+                        Pemilik dari server gamew saat ini.
+                    </p>
+                    <div class="mt-4 flex justify-center space-x-3">
+                        <a href="https://discord.gg/PmcWWpGTR6" class="text-gray-400 hover:text-indigo-400 transition"><i class="fab fa-discord"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Admins -->
+                <div class="glass-card p-6 rounded-xl text-center member-card">
+                    <div class="w-32 h-32 mx-auto mb-4 rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 p-1 shadow-lg">
+                        <img src="/assets/zake.jpg" alt="zake" class="w-full h-full rounded-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-semibold text-white">Zake</h3>
+                    <p class="text-indigo-400 font-medium mb-2 text-sm">Co-owner</p>
+                    <p class="text-gray-400 text-xs">
+                        Wakil pemilik server. Lebih aktif daripada owner.
+                    </p>
+                    <div class="mt-4 flex justify-center space-x-3">
+                        <a href="https://github.com/rizkye" class="text-gray-400 hover:text-indigo-400 transition"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                
+                <div class="glass-card p-6 rounded-xl text-center member-card">
+                    <div class="w-32 h-32 mx-auto mb-4 rounded-full bg-gradient-to-br from-red-500 to-pink-500 p-1 shadow-lg">
+                        <img src="/assets/hissats.jpg" alt="hissats" class="w-full h-full rounded-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-semibold text-white">Hissats</h3>
+                    <p class="text-indigo-400 font-medium mb-2 text-sm">Founder</p>
+                    <p class="text-gray-400 text-xs">
+                        Pendiri server.
+                    </p>
+                    <div class="mt-4 flex justify-center space-x-3">
+                        <a href="https://github.com/hidayadie" class="text-gray-400 hover:text-indigo-400 transition"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                
+                <div class="glass-card p-6 rounded-xl text-center member-card">
+                    <div class="w-32 h-32 mx-auto mb-4 rounded-full bg-gradient-to-br from-yellow-500 to-orange-500 p-1 shadow-lg">
+                        <img src="/assets/parris.jpg" alt="parris" class="w-full h-full rounded-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-semibold text-white">parris</h3>
+                    <p class="text-indigo-400 font-medium mb-2 text-sm">Admin Leader</p>
+                    <p class="text-gray-400 text-xs">
+                        Petinggi admin server. gtw
+                    </p>
+                    <div class="mt-4 flex justify-center space-x-3">
+                        <a href="https://github.com/faris0520" class="text-gray-400 hover:text-indigo-400 transition"><i class="fab fa-github"></i></a>
+                        <a href="https://x.com/faris0520" class="text-gray-400 hover:text-indigo-400 transition"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                
+                <div class="glass-card p-6 rounded-xl text-center member-card">
+                    <div class="w-32 h-32 mx-auto mb-4 rounded-full bg-gradient-to-br from-purple-500 to-fuchsia-500 p-1 shadow-lg">
+                        <img src="/assets/arkan.jpg" alt="arkan" class="w-full h-full rounded-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-semibold text-white">arkanoos</h3>
+                    <p class="text-indigo-400 font-medium mb-2 text-sm">Admin</p>
+                    <p class="text-gray-400 text-xs">
+                        Admin server gamew.
+                    </p>
+                    <div class="mt-4 flex justify-center space-x-3">
+                        <a href="https://discord.gg/PmcWWpGTR6" class="text-gray-400 hover:text-indigo-400 transition"><i class="fab fa-discord"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/typed.js/typed.min.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
+    <!-- Features Section -->
+     <!--
+    <section id="features" class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20">
+                <span class="text-sm font-medium py-1 px-3 rounded-full bg-indigo-500/10 text-indigo-400 mb-4 inline-block">WHY JOIN US</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Community <span class="gradient-text">Features</span></h2>
+                <p class="text-lg text-gray-400 max-w-3xl mx-auto">
+                    Discover what makes Gamew 2.0 the perfect home for gamers like you.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="glass-card p-8 rounded-2xl feature-card">
+                    <div class="flex items-start mb-6">
+                        <div class="bg-indigo-500/10 p-3 rounded-lg mr-4">
+                            <i class="fas fa-trophy text-indigo-400 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-white">Competitive Tournaments</h3>
+                    </div>
+                    <p class="text-gray-400">
+                        Weekly tournaments across multiple games with cash prizes, gift cards, and exclusive rewards for winners.
+                    </p>
+                </div>
+                
+                <div class="glass-card p-8 rounded-2xl feature-card">
+                    <div class="flex items-start mb-6">
+                        <div class="bg-green-500/10 p-3 rounded-lg mr-4">
+                            <i class="fas fa-users text-green-400 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-white">Active Community</h3>
+                    </div>
+                    <p class="text-gray-400">
+                        Connect with hundreds of active gamers daily through voice chats, game sessions, and special interest groups.
+                    </p>
+                </div>
+                
+                <div class="glass-card p-8 rounded-2xl feature-card">
+                    <div class="flex items-start mb-6">
+                        <div class="bg-purple-500/10 p-3 rounded-lg mr-4">
+                            <i class="fas fa-robot text-purple-400 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-white">Custom Bots</h3>
+                    </div>
+                    <p class="text-gray-400">
+                        Our proprietary bots offer game stats, XP systems, automated matchmaking, and unique community features.
+                    </p>
+                </div>
+                
+                <div class="glass-card p-8 rounded-2xl feature-card">
+                    <div class="flex items-start mb-6">
+                        <div class="bg-pink-500/10 p-3 rounded-lg mr-4">
+                            <i class="fas fa-gift text-pink-400 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-white">Regular Giveaways</h3>
+                    </div>
+                    <p class="text-gray-400">
+                        Monthly giveaways including Discord Nitro, game keys, hardware, and exclusive in-game items for active members.
+                    </p>
+                </div>
+                
+                <div class="glass-card p-8 rounded-2xl feature-card">
+                    <div class="flex items-start mb-6">
+                        <div class="bg-blue-500/10 p-3 rounded-lg mr-4">
+                            <i class="fas fa-shield-alt text-blue-400 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-white">Safe Environment</h3>
+                    </div>
+                    <p class="text-gray-400">
+                        Strict anti-toxicity policies enforced by our dedicated moderation team to ensure a welcoming space for all.
+                    </p>
+                </div>
+                
+                <div class="glass-card p-8 rounded-2xl feature-card">
+                    <div class="flex items-start mb-6">
+                        <div class="bg-yellow-500/10 p-3 rounded-lg mr-4">
+                            <i class="fas fa-star text-yellow-400 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-white">Premium Perks</h3>
+                    </div>
+                    <p class="text-gray-400">
+                        Loyal members gain access to exclusive channels, early game betas, and special recognition in the community.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>-->
 
-  <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
+    <!-- CTA Section -->
+    <section class="py-24 relative overflow-hidden">
+        <div class="absolute inset-0 gradient-bg rounded-3xl mx-4 sm:mx-6 lg:mx-8"></div>
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Ready to Join <span class="gradient-text">Gamew 2.0</span>?</h2>
+            <p class="text-xl text-gray-300 mb-8">
+                Server yang akan selalu menyenangkan, saya harap.
+            </p>
+            <a href="https://discord.gg/PmcWWpGTR6" target="_blank" class="discord-btn text-white px-8 py-4 rounded-xl text-lg font-bold inline-flex items-center mx-auto shadow-xl">
+                <i class="fab fa-discord mr-3 text-xl"></i> Join Our Discord Server
+            </a>
+            <div class="mt-8 flex justify-center space-x-6">
+                <div class="flex items-center">
+                    <div class="flex -space-x-2">
+                        <img class="w-10 h-10 rounded-full border-2 border-slate-800/50" src="/assets/didit.jpg" alt="">
+                        <img class="w-10 h-10 rounded-full border-2 border-slate-800/50" src="/assets/chiya.jpg" alt="">
+                        <img class="w-10 h-10 rounded-full border-2 border-slate-800/50" src="/assets/extremman.jpg" alt="">
+                    </div>
+                    <div class="ml-3 text-left">
+                        <p class="text-xs text-gray-400">Trusted by gamers worldwide</p>
+                        <div class="flex items-center">
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="text-xs text-white ml-1">5.0</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Footer -->
+    <footer class="bg-slate-900/50 py-12 border-t border-slate-800/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-6">
+                        <img src="/assets/logo.jpg" alt="Gamew 2.0 Logo" class="h-10 w-10 rounded-full mr-3">
+                        <span class="text-white font-bold text-xl">Gamew <span class="gradient-text">2.0</span></span>
+                    </div>
+                    <p class="text-gray-400 text-sm mb-6">
+                        Komunitas terbaik bagi yang bersemangat untuk terhubung, berkompetisi, dan bertumbuh bersama.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://x.com/prabowo" class="text-gray-400 hover:text-white transition"><i class="fab fa-twitter"></i></a>
+                        <a href="https://instagram.con/ini_gamew" class="text-gray-400 hover:text-white transition"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="text-gray-400 hover:text-white transition"><i class="fab fa-youtube"></i></a>
+                        <a href="https://discord.gg/PmcWWpGTR6" target="_blank" class="text-gray-400 hover:text-white transition"><i class="fab fa-discord"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-white font-semibold text-lg mb-4">Community</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition text-sm">Guidelines</a></li>
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition text-sm">Events</a></li>
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition text-sm">Leaderboards</a></li>
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition text-sm">Partners</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-white font-semibold text-lg mb-4">Support</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition text-sm">Help Center</a></li>
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition text-sm">Report Issues</a></li>
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition text-sm">Suggestions</a></li>
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition text-sm">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-white font-semibold text-lg mb-4">Legal</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition text-sm">Terms</a></li>
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition text-sm">Privacy</a></li>
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition text-sm">Cookies</a></li>
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition text-sm">Licenses</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-slate-800/50 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm mb-4 md:mb-0">
+                    &copy; 2025 Gamew 2.0 Community. All rights reserved.
+                </p>
+                <div class="flex space-x-6">
+                    <a href="#home" class="text-gray-400 hover:text-white transition text-sm">Status</a>
+                    <a href="mailto:gamew2@proton.me" class="text-gray-400 hover:text-white transition text-sm">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Add animation when scrolling to elements
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fadeIn');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.feature-card, .member-card, .glass-card').forEach(card => {
+            observer.observe(card);
+        });
+        
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-lg');
+                nav.classList.add('bg-slate-900/90');
+            } else {
+                nav.classList.remove('shadow-lg');
+                nav.classList.remove('bg-slate-900/90');
+            }
+        });
+    </script>
 </body>
-
 </html>
